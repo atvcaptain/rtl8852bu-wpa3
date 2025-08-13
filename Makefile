@@ -78,7 +78,7 @@ CONFIG_GSPI_HCI = n
 ########################## Features ###########################
 CONFIG_MP_INCLUDED = y
 CONFIG_CONCURRENT_MODE = n
-CONFIG_POWER_SAVE = n
+CONFIG_POWER_SAVE = y
 CONFIG_IPS_MODE = 0
 CONFIG_LPS_MODE = 0
 CONFIG_BTC = n
@@ -833,6 +833,7 @@ include $(src)/phl/phl.mk
 obj-$(CONFIG_RTL8852BU) := $(MODULE_NAME).o
 $(MODULE_NAME)-y = $(_OS_INTFS_FILES)
 $(MODULE_NAME)-y += $(_CORE_FILES)
+$(MODULE_NAME)-y += $(_PHL_FILES)
 
 ############# MEMORY MANAGMENT #############
 ifneq ($(CONFIG_RTKM), n)
